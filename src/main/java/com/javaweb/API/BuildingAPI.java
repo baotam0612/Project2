@@ -23,7 +23,7 @@ public class BuildingAPI {
 	private BuildingService buildingService;
 	@GetMapping(value = "/api/building/")
 	public List<BuildingDTO> getBuilding(@RequestParam(name="name", required = false) String name ,
-			@RequestParam(name="districtid", required = false) Long districtid
+			@RequestParam(name="districtid", required = false) Long districtId
 			) {
 //		try {
 //			System.out.println(5 / 0);
