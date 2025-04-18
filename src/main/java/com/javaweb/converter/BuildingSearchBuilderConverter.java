@@ -15,6 +15,16 @@ public class BuildingSearchBuilderConverter {
 		BuildingSearchBuilder buildingSearchBuilder = new BuildingSearchBuilder.Builder().setName(MapUtil.getObject(params, "name", String.class))
 				.setFloorArea(MapUtil.getObject(params, "floorarea", Long.class))
 				.setWard(MapUtil.getObject(params, "ward", String.class))
+				.setDistrictCode(MapUtil.getObject(params, "districtcode", String.class))
+				.setNumberofBasement(MapUtil.getObject(params, "numberofbasement", Integer.class))
+				.setTypeCode(typeCode)
+				.setManagerName(MapUtil.getObject(params, "managername", String.class))
+				.setManagerPhoneNumber(MapUtil.getObject(params, "managerphonenumber", String.class))
+				.setRentPriceFrom(MapUtil.getObject(params, "rentpricefrom", Long.class))
+				.setRentPriceTo(MapUtil.getObject(params, "rentpriceto", Long.class))
+				.setAreaFrom(MapUtil.getObject(params, "areafrom", Long.class))
+				.setAreaTo(MapUtil.getObject(params, "areato", Long.class))
+				.setStaffId(MapUtil.getObject(params, "staffid", Long.class))
 				.build();
 		return buildingSearchBuilder;
 	}

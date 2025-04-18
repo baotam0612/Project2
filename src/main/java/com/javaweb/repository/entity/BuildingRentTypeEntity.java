@@ -1,6 +1,5 @@
 package com.javaweb.repository.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,27 +9,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="rentarea")
-public class RentAreaEntity {
-	
+@Table(name="buildingrenttype")
+public class BuildingRentTypeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private  Long id;
 	
-	@Column(name="value")
-	private String value;
-	
 	@ManyToOne
 	@JoinColumn(name="buildingid")
-	private BuildingEntity rentAreaBuilding;
-
-	public String getValue() {
-		return value;
-	}
-
-	public void setValue(String value) {
-		this.value = value;
-	}
+	private BuildingEntity rentTypeBuilding;
 	
+	@ManyToOne
+	@JoinColumn(name="renttypeid")
+	private RentTypeEntity rentTypeId;
 
 }

@@ -22,9 +22,12 @@ public class BuildingServiceImpl implements BuildingService {
     
     @Autowired
 	private BuildingDTOConverter buildingDTOConverter;
+    
 
     @Autowired
    	private BuildingSearchBuilderConverter buildingSearchBuilderConverter;
+    
+    @Override
 	public List<BuildingDTO> findAll(Map<String, Object> params, List<String> typeCode) {
 		// TODO Auto-generated method stub
 		BuildingSearchBuilder buildingSearchBuilder = buildingSearchBuilderConverter.toBuildingSearchBuilder(params, typeCode);

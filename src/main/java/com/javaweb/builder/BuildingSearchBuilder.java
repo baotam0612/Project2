@@ -9,7 +9,7 @@ public class BuildingSearchBuilder {
 	private String ward;
 	private String districtCode;
 	private Integer numberofBasement;
-	private List<String> typecode = new ArrayList<>();
+	private List<String> typeCode = new ArrayList<>();
 	private String managerName;
 	private String managerPhoneNumber;
 	private Long rentPriceFrom;
@@ -26,7 +26,7 @@ public class BuildingSearchBuilder {
 		this.ward = builder.ward;
 		this.districtCode = builder.districtCode;
 		this.numberofBasement = builder.numberofBasement;
-		this.typecode = builder.typecode;
+		this.typeCode = builder.typeCode;
 		this.managerName = builder.managerName;
 		this.managerPhoneNumber = builder.managerPhoneNumber;
 		this.rentPriceFrom = builder.rentPriceFrom;
@@ -50,8 +50,8 @@ public class BuildingSearchBuilder {
 	public Integer getNumberofBasement() {
 		return numberofBasement;
 	}
-	public List<String> getTypecode() {
-		return typecode;
+	public List<String> getTypeCode() {
+		return typeCode;
 	}
 	public String getManagerName() {
 		return managerName;
@@ -81,7 +81,7 @@ public class BuildingSearchBuilder {
 		private String ward;
 		private String districtCode;
 		private Integer numberofBasement;
-		private List<String> typecode = new ArrayList<>();
+		private List<String> typeCode = new ArrayList<>();
 		private String managerName;
 		private String managerPhoneNumber;
 		private Long rentPriceFrom;
@@ -112,8 +112,8 @@ public class BuildingSearchBuilder {
 			this.numberofBasement = numberofBasement;
 			return this;
 		}
-		public Builder setTypecode(List<String> typecode) {
-			this.typecode = typecode;
+		public Builder setTypeCode(List<String> typeCode) {
+			this.typeCode = typeCode;
 			return this;
 		}
 		public Builder setManagerName(String managerName) {
