@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.javaweb.builder.BuildingSearchBuilder;
 import com.javaweb.model.BuildingDTO;
+import com.javaweb.repository.BuildingRepository;
+import com.javaweb.repository.entity.BuildingEntity;
 import com.javaweb.service.BuildingService;
 
 import customexception.FieldRequireException;
@@ -25,6 +27,9 @@ public class BuildingAPI {
 	@Autowired
 	private BuildingService buildingService;
 	
+	@Autowired
+	private BuildingRepository buildingRepository;
+	
 	@Value("${dev.nguyen}")
 	private String data;
 	
@@ -33,6 +38,20 @@ public class BuildingAPI {
 			@RequestParam(name="typeCode", required = false) List<String> typeCode)
 			{
 		List<BuildingDTO> result = buildingService.findAll(params, typeCode);
+		return result;
+	}
+	
+//	@GetMapping(value="/api/building/{id}")
+//	public BuildingDTO getBuildingById(@PathVariable Long id){
+//		BuildingDTO result = new BuildingDTO();
+//		BuildingEntity building = buildingRepository.findById(id).get();
+//		return result;
+//	}
+	
+	@GetMapping(value="/api/building/{name}")
+	public BuildingDTO getBuildingById(@PathVariable String name){
+		BuildingDTO result = new BuildingDTO();
+		List<BuildingEntity> building =  buildingRepository.findByNameContaining(name);
 		return result;
 	}
 
